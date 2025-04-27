@@ -1,0 +1,73 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{style}
+
+\begin{document}
+\title{Simulation-Based Inference: 
+\\Time Series of a Coherent Signal}
+\author{Hyungjin Kim
+\\{\it\small Deutsches Elektronen-Synchrotron DESY, Notkestr. 85, 22607 Hamburg, Germany}}
+\maketitle
+
+Consider the following time series
+\begin{align}
+s(t) = h(t) + n(t)
+\end{align}
+where $h(t)$ is a coherent signal and $n(t)$ is the noise.
+Each of them is characterized by
+\begin{align}
+\langle n(t_I) n(t_J) \rangle = N_{IJ} = \delta_{IJ} \sigma^2
+\end{align}
+and 
+\begin{align}
+h(t) = h_0 \cos(2\pi f t + \varphi)
+\end{align}
+The index $I$ denotes the discrete time index and $N_{IJ}$ is the noise covariance matrix. The noise is assumed to be white, although this assumption can be easily relaxed. For the generation of simulated time series, we set $\sigma=1$. 
+
+In this note, we generate time series according to the above characterization. We then perform a traditional Bayesian analysis for the estimation of the signal $h(t)$. We also use simulation-based inference technique for the parameter estimation, and compare the performance of two approaches. 
+
+\section{Likelihood}
+For the traditional approach, we begin by constructing the likelihood function. The likelihood function is given by
+\begin{align}
+p( D | \theta ) 
+= \frac{1}{\sqrt{ | 2 \pi N | }}
+\exp\left[
+- \frac{1}{2} (s - h)^T
+\cdot N^{-1} \cdot (s - h)
+\right]
+\end{align}
+where we treat the time series as a column vector $s = (s(t_1), \, s(t_2) \, \cdots, s(t_{N_t}) )^T$. The parameter is
+\begin{align}
+\theta = \{ \sigma, h_0, f , \varphi \}.
+\end{align}
+We impose flat uniform prior for each of these parameters. Then the posterior can be constructed as
+\begin{align}
+p(\theta | D)
+= p(D | \theta) p(\theta) .
+\end{align}
+
+
+If we model that the underlying noise is white, then the noise covariance matrix is diagonal. The likelihood function can then be simplified as
+\begin{align}
+P(D | \theta)
+= \frac{1}{(2\pi)^{N_t/2} \sigma^{N_t}}  \exp\left[ - \frac{1}{2\sigma^2} \sum_{i=1}^{N_t} (s - h)^2 \right]  .
+\end{align}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bibliographystyle{utphys}
+\bibliography{ref}
+\end{document}
+
+
