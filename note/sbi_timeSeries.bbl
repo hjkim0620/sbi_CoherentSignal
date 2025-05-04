@@ -1,0 +1,11 @@
+\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{1}
+
+\bibitem{Papamakarios:2019fms}
+G.~Papamakarios, E.~Nalisnick, D.~J. Rezende, S.~Mohamed, and
+  B.~Lakshminarayanan, ``{Normalizing Flows for Probabilistic Modeling and
+  Inference},'' \href{https://dx.doi.org/10.5555/3546258.3546315}{{\em J.
+  Machine Learning Res.} {\bfseries 22} no.~1, (2021) 2617--2680},
+  \href{https://arxiv.org/abs/1912.02762}{{\ttfamily arXiv:1912.02762
+  [stat.ML]}}.
+
+\end{thebibliography}\endgroup
